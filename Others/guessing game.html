@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>guessing game</title>
+  </head>
+  <body>
+    <h1 style="left: 35%; position: absolute">
+      bienvenue dans guessing game !
+    </h1>
+    <button
+      id="btn"
+      style="
+        font-size: 24px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+      "
+    >
+      clique ici pour commencer
+    </button>
+    <script type="module" src=""></script>
+    <script>
+      const btn = document.getElementById("btn");
+
+      function game() {
+        const chiffreMystere = Ramdom()
+        let nbrTentative = 1;
+        mainGameLoop(nbrTentative, chiffreMystere)
+        
+      }
+
+      btn.addEventListener("click", game());
+      function Ramdom() {
+        return Math.floor(Math.random()*10)
+      }
+
+      function mainGameLoop(nbrTentative, chiffreMystere) {
+        while (true) {
+          const reponse = prompt("quel est le chiffre mystere selon toi ?");
+          if (reponse == chiffreMystere) {
+            alert(
+              "Felicitation ! Vous avez trouve en " +
+                nbrTentative +
+                " tentative !",
+            );
+            break;
+          } else {
+            alert(
+              reponse > chiffreMystere
+                ? "vous etes au dessus !"
+                : " Vous etes en dessous !",
+            );
+            nbrTentative++;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+11/fev/2026
+
+initiation a javascript historique, utilite et impletementation.
+bonne pratique de la programmation :
+- definition de nom parlant
+- differenciation variable, constantes
+- recherche pre developpement
+
+// Les type primitif en js : String, boolean, number, null, undefined, les type complexe: objet, tableaux, map, set.
+les nommenclature:
+- camalCase
+- PascalCase
+- kebabCase
+- snake-case
+
+echappe de chaine: let titre = 'l\'autre'
+signature d'une fonction : description de la fonction "squelettes"
