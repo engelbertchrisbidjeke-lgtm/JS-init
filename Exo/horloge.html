@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            background: #1a1a1a;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                        inset 0 0 10px rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+        }
+
+        #clock {
+            font-size: 5rem;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="clock">00:00:00</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+           
+            const heur = String(now.getHours()).padStart(2, '0');
+            const minute = String(now.getMinutes()).padStart(2, '0');
+            const seconde = String(now.getSeconds()).padStart(2, '0');
+           
+            document.getElementById('clock').textContent = `${heur}:${minute}:${seconde}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
